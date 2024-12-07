@@ -8,7 +8,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use('/users', usersRoutes);
+app.use('/api/users', usersRoutes);
 
 app.use((err, req, res, next) => {
     res.json({
@@ -17,5 +17,5 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
-})
+    console.log(`Server running on http://localhost:${PORT}/api/users`);
+});
