@@ -1,7 +1,7 @@
 FROM node:22.11.0-alpine
 WORKDIR /app
-COPY package*.json ./
-RUN npm install
+ENV PORT 5000
 COPY . .
-CMD ["npm", "run", "start"]
-EXPOSE 8080
+RUN npm install
+EXPOSE 5000
+CMD [ "npm", "run", "start"]
