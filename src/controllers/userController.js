@@ -80,9 +80,9 @@ const deleteUser = async (req, res) => {
 };
 
 const createUser = async (req, res) => {
-    const { nama, tgl_lahir, jenis_kelamin, email, password } = req.body;
+    const { nama, jenis_kelamin, tgl_lahir, email, password } = req.body;
     try {
-        const result = await userModels.createUser(nama, tgl_lahir, jenis_kelamin, email, password);
+        const result = await userModels.createUser(nama, jenis_kelamin, tgl_lahir, email, password);
         res.status(201).json({
             message: 'Berhasil membuat akun',
             userId: result.insertId,
